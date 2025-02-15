@@ -309,10 +309,10 @@ export default CreatePost;
 
 
 
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+//import './CreatePost.css'; // Import the new CSS file
 
 function CreatePost() {
     const [title, setTitle] = useState('');
@@ -329,11 +329,11 @@ function CreatePost() {
         const url = 'http://localhost:3000/api/fetch-lorem';
         axios.get(url)
             .then(response => {
-                setContent(response.data);  // Set the content with fetched lorem ipsum text
+                setContent(response.data);
             })
             .catch(error => {
                 console.error('Error fetching lorem ipsum', error);
-                setContent('');  // Clear content if API fails
+                setContent('');
             });
     };
 
@@ -343,7 +343,7 @@ function CreatePost() {
         try {
             const response = await axios.post('http://localhost:3000/posts', postData);
             console.log('Post created:', response.data);
-            navigate('/');  // Navigate to home page after successful creation
+            navigate('/');
         } catch (error) {
             console.error('Failed to create post', error);
             alert('Failed to create post. Check console for more details.');
@@ -351,7 +351,7 @@ function CreatePost() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="create-post-form">
             <div>
                 <label>Title:</label>
                 <input

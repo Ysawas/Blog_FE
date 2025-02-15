@@ -158,7 +158,7 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Blog Title</h1>
+      <h1>Home Page of Free Blogging</h1>
       <h2 className="our-post-title">Our Posts</h2>
       <div className="posts-grid">
         {posts.map(post => (

@@ -337,3 +337,107 @@ h2.our-post-title {
 .post-button:hover {
   background-color: #535bf2; /* Slightly lighter color on hover */
 }
+
+/* Keyframe for form fade in and slide up effect */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframe for glowing pulse effect on focus */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 108, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(100, 108, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 108, 255, 0);
+  }
+}
+
+/* Container styling for the create post form with gradient background and animation */
+.create-post-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #e6e6ff);
+  border-radius: 10px;
+  animation: fadeInSlide 0.8s ease-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Space between each form group */
+.create-post-form div {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.create-post-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Input and textarea styling with transition and focus effects */
+.create-post-form input[type="text"],
+.create-post-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-post-form input[type="text"]:focus,
+.create-post-form textarea:focus {
+  outline: none;
+  border-color: #646cff;
+  animation: pulse 1.5s infinite;
+  transform: scale(1.02);
+}
+
+/* Ensure textarea has enough height and can be resized vertically */
+.create-post-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* Submit button styling with gradient and hover effects */
+.create-post-form button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #646cff, #535bf2);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.create-post-form button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .create-post-form {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
